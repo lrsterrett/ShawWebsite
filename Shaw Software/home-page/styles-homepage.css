@@ -1,0 +1,353 @@
+/*****************************************************
+                    Base Rules
+ *****************************************************/
+
+@font-face {
+    font-family: "NevisBold";
+	src: url('../assets/fonts/nevis.ttf');
+}
+
+@font-face {
+    font-family: "GothamCondensed";
+	src: url('../assets/fonts/gclr.otf');
+}
+
+@font-face {
+  font-family: "GothamBold";
+  src: url("../assets/fonts/gothambold.otf");
+}
+
+
+h1, h2, h3 {
+    font-family: "NevisBold";
+    text-decoration: uppercase;
+}
+
+h4, h5 {
+    font-family: "GothamCondensed";
+    font-weight: 500;
+    letter-spacing: .03em;
+}
+
+p, a, .h3 {
+    font-family: "GothamBold";
+    line-height: 1.2;
+}
+
+/*****************************************************
+                    Layout
+ *****************************************************/
+
+#header {
+    height: 80vh;
+}
+
+/*****************************************************
+                    Modules
+ *****************************************************/
+
+#header {
+    position: relative;
+}
+
+#header-bg-img {
+    /* For some reason flex is required as the parent element of #div-content
+        to vertically center header-content */
+    display: flex;
+    height: 100%;
+    background: url("../assets/images/home-page/mountain_blue_shield_960.jpg") no-repeat center;
+    background-size: cover;
+}
+
+#header-content {
+    max-width: 1024px;
+}
+
+#header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,.3));
+}
+
+#header-border {
+    height: 10px;
+    width: 100%;
+}
+
+/*****************************************************
+                    Custom Components
+ *****************************************************/
+
+/******************** Servies Section ****************/
+
+        /************ Universals *********/
+
+[class^="our-expertise-shaded-area"] {
+    height: 100%;
+    background: rgba(255,255,255,0.4);
+    border: 3px solid white;
+}
+
+.our-expertise-card-sm, .our-expertise-card-lg {
+    height: 100%;
+    background: white;
+}
+
+[class^="our-expertise-card"] h4 {
+    margin-bottom: 50px;
+}
+
+[class^="our-expertise-card"] p {
+        margin-bottom: 25px;
+    }
+
+@media(max-width: 399.98px) {
+    .our-expertise-card-sm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 25px 50px;
+    }
+}
+
+@media(min-width: 400px) {
+    [class^="our-expertise-card"] p {
+        margin-bottom: 50px;
+    }
+
+    .our-expertise-card-sm, .our-expertise-card-lg {
+        padding: 75px 75px 0 25px;
+    }
+}
+
+
+        /************ Lg Screens *********/
+
+#our-expertise-lg-screens {
+    height: 800px;
+}
+
+.carousel-indicators {
+    margin-bottom: -4px;
+}
+
+.carousel-item {
+    height: 484px;
+    margin: 5px;
+}
+
+.our-expertise-card-wrapper-lg {
+    position: absolute;
+    width: calc(100% - 33px);
+    height: calc(100% - 25px);
+    top: 15px;
+    left: 15px;
+}
+
+.our-expertise-shaded-area-lg, .our-expertise-card-lg {
+    width: 50%;
+    position: absolute;
+    top: 0;
+}
+
+.our-expertise-shaded-area-lg {
+    left: 0;
+}
+
+.our-expertise-card-lg {
+    right: 0;
+    padding-right: 75px;
+}
+
+.click-icon {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(42,52,66,1);
+}
+
+.carousel-control-prev-icon {
+    position: absolute;
+    top: 7px;
+    left: 6px;
+}
+
+.carousel-control-next-icon {
+    position: absolute;
+    top: 7px;
+    left: 9px;
+}
+
+
+        /************ Sm Screens *********/
+
+
+.our-expertise-sm-component {
+    height: 484px;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+.our-expertise-card-wrapper-sm {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.our-expertise-sm-component:nth-child(even) .our-expertise-card-wrapper-sm {
+    flex-direction: row-reverse;
+}
+
+.our-expertise-card-sm {
+    padding-right: 25px;
+}
+
+@media(max-width: 649.98px) {
+    .our-expertise-card-sm {
+        width: 100%;
+    }
+}
+
+@media(min-width: 650px) {
+    .our-expertise-shaded-area-sm {
+        flex: 1;
+    }
+
+    .our-expertise-card-sm {
+        flex: 0 0 440px;
+    }
+}
+
+.btn-theme-button {
+    padding: 10px 30px;
+    background: white;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid #9d7341;
+}
+
+/*****************************************************
+                    State
+ *****************************************************/
+
+.btn-theme-button {
+    transition: background .3s;
+}
+
+.btn-theme-button:hover {
+    color: white;
+    background: #9d7341;
+    text-decoration: none;
+}
+
+/*****************************************************
+                    Themes
+ *****************************************************/
+
+h2, h3, h4, h5, p, a {
+    color: #2a3442;
+}
+
+hr {
+    background: #2a3442;
+}
+
+
+#header hr {
+    max-width: 300px;
+    height: .3px;
+}
+
+/* .display and .h classes are not responsive in standard bootstrap.
+    This is a size adjustment for smaller screens */
+@media(max-width: 575.98px) {
+    .display-4 {
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 1.3;
+    }
+    
+    .h3 {
+        font-size: 1.5rem;
+    }
+}
+
+.theme-bg-color-brown {
+    background: linear-gradient(to right, #9d7341, #c4ab8d);
+}
+
+
+/*  Wordpress typography
+
+@font-face {
+    font-family: "NevisBold";
+	src: url('../fonts/nevis.ttf');
+}
+@font-face {
+    font-family: "GothamCondensed";
+	src: url('../fonts/gclr.otf');
+}
+@font-face {
+    font-family: "GothamBold";
+	src: url('../fonts/gothambold.otf');
+}
+h1, h2, h3{
+	font-size:48px;
+	color:#2a3442;
+    font-family: "NevisBold";
+	text-transform:uppercase;
+	margin:0;
+}
+h2{
+	font-size:36px;
+}
+h3{
+	font-size:24px;
+	line-height:30px;
+}
+h4{
+    font-family: "GothamCondensed";
+	font-size:20px;
+	letter-spacing:2px;
+	color:#2a3442;
+	margin:0;
+}
+p, a{
+    font-family: "GothamBold";
+	font-size:14px;
+	line-height:18px;
+	color:#2a3442;
+	text-decoration:none;
+}
+a{
+	color:#9d7341;
+}
+a.cta-btn, .contact-form-wrap input[type="submit"]{
+	color:#2a3442;
+	padding:10px 30px;
+	border:2px solid #9d7341;
+	text-transform:uppercase;
+	text-decoration:none;
+    font-family: "GothamBold";
+	margin-top:10px;
+	display:inline-block;
+	transition:200ms;
+}
+a.cta-btn:hover{
+	color:#fff;
+	border:2px solid #9d7341;
+	background-color:#9d7341;
+	text-decoration:none;
+}
+ul{
+	margin-left:40px;
+}
+li{
+	list-style:disc;
+}
+
+*/
